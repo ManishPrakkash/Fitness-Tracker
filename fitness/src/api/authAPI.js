@@ -2,32 +2,36 @@ import api from './axiosConfig';
 
 // Login user
 export const login = async (credentials) => {
-  try {
-    const response = await api.post('/auth/login/', credentials);
-    return response.data;
-  } catch (error) {
-    throw handleError(error);
-  }
+  // Mock response
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        token: 'mock-jwt-token', // Replace with a valid JWT for testing
+      });
+    }, 500);
+  });
 };
 
 // Register new user
 export const register = async (userData) => {
-  try {
-    const response = await api.post('/auth/register/', userData);
-    return response.data;
-  } catch (error) {
-    throw handleError(error);
-  }
+  // Mock response
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        token: 'mock-jwt-token', // Replace with a valid JWT for testing
+      });
+    }, 500);
+  });
 };
 
 // Logout user
 export const logout = async () => {
-  try {
-    const response = await api.post('/auth/logout/');
-    return response.data;
-  } catch (error) {
-    throw handleError(error);
-  }
+  // Mock response
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 500);
+  });
 };
 
 // Update user profile
